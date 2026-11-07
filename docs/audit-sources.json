@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-07T17:55:32.900Z",
+  "sources": [
+    {
+      "path": "src/app/api/authors/route.ts",
+      "sha256": "fca5fdae2a9058c1630c74d325fca97afaf564c3e3f1f8259809e109373eca29"
+    },
+    {
+      "path": "src/app/api/authors/[id]/books/route.ts",
+      "sha256": "f17a4665801a453123a8f0dfba167268294355c6e2a7afec5478ddee5d5c2f18"
+    },
+    {
+      "path": "src/app/api/authors/[id]/route.ts",
+      "sha256": "f4ddf0ef63e1f9dfd70ba50e20a7305a27b05add2bd9905d673c28e0e90d937e"
+    },
+    {
+      "path": "src/app/api/authors/[id]/stats/route.ts",
+      "sha256": "9c2649f5c648801fbbae9ad227947a2b906093140d0a779032183795dff09534"
+    },
+    {
+      "path": "src/app/api/books/genres/route.ts",
+      "sha256": "333eb0d8aa5500c810dd39b68d36894ef7862201a09032255ab6b15a55784a68"
+    },
+    {
+      "path": "src/app/api/books/route.ts",
+      "sha256": "d13d869cbe12f336f9714475f9457e2d244e1102b78abeed7e897244b46f3efc"
+    },
+    {
+      "path": "src/app/api/books/search/route.ts",
+      "sha256": "73aa02b25312eee3a34c2a8e91c3809980efc6f7437183726b937670d7ae54e5"
+    },
+    {
+      "path": "src/app/api/books/[id]/route.ts",
+      "sha256": "54d3059ef96278e5ace76add60b16af73571d7561d01282948092a72bb4bac5f"
+    },
+    {
+      "path": "src/app/authors/[id]/page.tsx",
+      "sha256": "2e6ef92d94fc503cdf5b12a1d88d6ed268f8394c417beab04f5c077a1adc6679"
+    },
+    {
+      "path": "src/app/books/page.tsx",
+      "sha256": "e4dd7944c67a23c3a02e6513192b83e50d553e44ce2aa414965c1a33bed66d46"
+    },
+    {
+      "path": "src/app/globals.css",
+      "sha256": "0cdd300a8beb8fd60580cd05573aafe3b4a2ad77c798a89c2d21241c26bf21d2"
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "sha256": "5fe5cf8a13ac073b42b3eae635ac9a3fdf119520850d96994337d62d54c30677"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "sha256": "d457182573c1320c796c6160a8e3c153843731b81c768c80f4243345a243d631"
+    },
+    {
+      "path": "src/components/library.tsx",
+      "sha256": "8a8114e6304c10f507b7ea1f2dd233b4a8540d88ce2dce8dd4bb6fa6e4dbb105"
+    },
+    {
+      "path": "src/lib/api.ts",
+      "sha256": "70ef77ac19609a14b811ad46df3c22d8e7ca1d49dbe5ccbd5852102b249ece70"
+    },
+    {
+      "path": "src/lib/prisma.ts",
+      "sha256": "e62f827658bd9a6996a7e9d98c09d67fc4ca1e6bae4e527a374622d775db7ba6"
+    },
+    {
+      "path": "scripts/audit-database.mjs",
+      "sha256": "e2cea97055aa1f9155100b575715a8a479340c345a263d666e8da05dba5ba265"
+    },
+    {
+      "path": "scripts/audit-fixture.mjs",
+      "sha256": "2047e2cfb23eceeb7d3019558dbcb79104d2bb3ba267196de855b402347ceca4"
+    },
+    {
+      "path": "scripts/run-audit-checks.mjs",
+      "sha256": "ae63baeb9f0208c1625ef69aba129da1cd3dad599dcef8573412c5aedebe7ad1"
+    },
+    {
+      "path": "scripts/test-api.mjs",
+      "sha256": "d7e1913195afef8117f275e0bf4ff1a5703dbfb70ca08c90df59dd35f08b5461"
+    },
+    {
+      "path": "scripts/verify-db.mjs",
+      "sha256": "94fe60068e25e385a41b8ca1d95079c41bef6cc08c054ed20c3bda97b7a9eca8"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "sha256": "ff1a4d50aa15332ebe9350996608de1b195c04921955b6dcc4261d827605a807"
+    }
+  ]
+}

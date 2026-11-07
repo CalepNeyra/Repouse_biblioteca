@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-07T17:54:09.135Z",
+  "status": "CUMPLE",
+  "metadata": [
+    {
+      "database_matches": true,
+      "role_matches": true,
+      "version": "18.6 (ac70818)"
+    }
+  ],
+  "fixtureBooksReadDirectlyFromNeon": 8,
+  "statisticsFromHttp": {
+    "authorId": "cmw6p7ela001cgsgohs5di6hw",
+    "authorName": "Autora Auditoría TAREA",
+    "totalBooks": 8,
+    "firstBook": {
+      "title": "Serie Auditoría 00",
+      "year": 2000
+    },
+    "latestBook": {
+      "title": "Libro creado desde detalle",
+      "year": 2020
+    },
+    "averagePages": 156.5,
+    "genres": [
+      "Ensayo Auditoría",
+      "Novela Auditoría"
+    ],
+    "longestBook": {
+      "title": "Libro creado desde detalle",
+      "pages": 300
+    },
+    "shortestBook": {
+      "title": "Serie Auditoría 00",
+      "pages": 100
+    }
+  },
+  "countsBeforeFixtureCleanup": {
+    "authors": 5,
+    "books": 24
+  }
+}

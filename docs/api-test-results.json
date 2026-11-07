@@ -1,0 +1,1221 @@
+{
+  "date": "2026-11-07T17:54:26.446Z",
+  "base": "http://127.0.0.1:3000",
+  "passed": 30,
+  "failed": false,
+  "cleanupSuccessful": true,
+  "results": [
+    {
+      "id": "H01",
+      "name": "POST author / persistence",
+      "status": "PASS"
+    },
+    {
+      "id": "H02",
+      "name": "GET authors includes books and count",
+      "status": "PASS"
+    },
+    {
+      "id": "H03",
+      "name": "Statistics for author without books",
+      "status": "PASS"
+    },
+    {
+      "id": "H04",
+      "name": "Duplicate email returns 409",
+      "status": "PASS"
+    },
+    {
+      "id": "H05",
+      "name": "Invalid authors return 400",
+      "status": "PASS"
+    },
+    {
+      "id": "H06",
+      "name": "Malformed JSON returns 400",
+      "status": "PASS"
+    },
+    {
+      "id": "H07",
+      "name": "PUT author preserves omitted fields",
+      "status": "PASS"
+    },
+    {
+      "id": "H08",
+      "name": "Second author / duplicate update",
+      "status": "PASS"
+    },
+    {
+      "id": "H09",
+      "name": "POST book / GET book",
+      "status": "PASS"
+    },
+    {
+      "id": "H10",
+      "name": "Duplicate ISBN returns 409",
+      "status": "PASS"
+    },
+    {
+      "id": "H11",
+      "name": "Book validation / missing author",
+      "status": "PASS"
+    },
+    {
+      "id": "H12",
+      "name": "Books with optional and null fields",
+      "status": "PASS"
+    },
+    {
+      "id": "H13",
+      "name": "GET books filtered by genre and author",
+      "status": "PASS"
+    },
+    {
+      "id": "H14",
+      "name": "GET books by author matches guide response",
+      "status": "PASS"
+    },
+    {
+      "id": "H15",
+      "name": "Full statistics / unknown fields excluded",
+      "status": "PASS"
+    },
+    {
+      "id": "H16",
+      "name": "Search combines case-insensitive title, exact genre, authorName",
+      "status": "PASS"
+    },
+    {
+      "id": "H17",
+      "name": "Search pagination and descending year",
+      "status": "PASS"
+    },
+    {
+      "id": "H18",
+      "name": "Search default parameters and empty results",
+      "status": "PASS"
+    },
+    {
+      "id": "H19",
+      "name": "Search rejects invalid pagination / sort / order",
+      "status": "PASS"
+    },
+    {
+      "id": "H20",
+      "name": "Available genres are unique",
+      "status": "PASS"
+    },
+    {
+      "id": "H21",
+      "name": "PUT book / reassignment / optional reset",
+      "status": "PASS"
+    },
+    {
+      "id": "H22",
+      "name": "All missing records return 404",
+      "status": "PASS"
+    },
+    {
+      "id": "H23",
+      "name": "Default page=1 limit=10 createdAt desc with 13 real books",
+      "status": "PASS"
+    },
+    {
+      "id": "H24",
+      "name": "All three sort fields in both asc and desc",
+      "status": "PASS"
+    },
+    {
+      "id": "H25",
+      "name": "Partial title and authorName / exact genre / combined AND",
+      "status": "PASS"
+    },
+    {
+      "id": "H26",
+      "name": "Pagination beyond last page / limit=50 / full JSON contract",
+      "status": "PASS"
+    },
+    {
+      "id": "H27",
+      "name": "Unknown years and pages / unique genres / rounded average",
+      "status": "PASS"
+    },
+    {
+      "id": "H28",
+      "name": "All three pages return HTML",
+      "status": "PASS"
+    },
+    {
+      "id": "H29",
+      "name": "DELETE book returns JSON confirmation",
+      "status": "PASS"
+    },
+    {
+      "id": "H30",
+      "name": "DELETE author cascades only its books",
+      "status": "PASS"
+    }
+  ],
+  "requests": [
+    {
+      "check": "H01",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 1410
+    },
+    {
+      "check": "H01",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 282
+    },
+    {
+      "check": "H02",
+      "method": "GET",
+      "path": "/api/authors",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 259
+    },
+    {
+      "check": "H03",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq/stats",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 281
+    },
+    {
+      "check": "H04",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "milliseconds": 393
+    },
+    {
+      "check": "H05",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 16
+    },
+    {
+      "check": "H05",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 13
+    },
+    {
+      "check": "H05",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 11
+    },
+    {
+      "check": "H05",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 13
+    },
+    {
+      "check": "H05",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 13
+    },
+    {
+      "check": "H06",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 9
+    },
+    {
+      "check": "H07",
+      "method": "PUT",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 652
+    },
+    {
+      "check": "H07",
+      "method": "PUT",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 40
+    },
+    {
+      "check": "H07",
+      "method": "PUT",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 10
+    },
+    {
+      "check": "H08",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 635
+    },
+    {
+      "check": "H08",
+      "method": "PUT",
+      "path": "/api/authors/cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "milliseconds": 430
+    },
+    {
+      "check": "H09",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 763
+    },
+    {
+      "check": "H09",
+      "method": "GET",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 287
+    },
+    {
+      "check": "H10",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "milliseconds": 516
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 15
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 9
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 8
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 10
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 9
+    },
+    {
+      "check": "H11",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 137
+    },
+    {
+      "check": "H12",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 752
+    },
+    {
+      "check": "H12",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 758
+    },
+    {
+      "check": "H13",
+      "method": "GET",
+      "path": "/api/books?genre=lab12-1794074022151&authorId=cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 258
+    },
+    {
+      "check": "H14",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq/books",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 280
+    },
+    {
+      "check": "H15",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq/stats",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 275
+    },
+    {
+      "check": "H16",
+      "method": "GET",
+      "path": "/api/books/search?search=AMOR&genre=lab12-1794074022151&authorName=GABRIEL%20LAB12-1794074022151&sortBy=title&order=asc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 764
+    },
+    {
+      "check": "H17",
+      "method": "GET",
+      "path": "/api/books/search?genre=lab12-1794074022151&limit=1&sortBy=publishedYear&order=desc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 751
+    },
+    {
+      "check": "H17",
+      "method": "GET",
+      "path": "/api/books/search?genre=lab12-1794074022151&limit=1&sortBy=publishedYear&order=desc&page=2",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 754
+    },
+    {
+      "check": "H18",
+      "method": "GET",
+      "path": "/api/books/search?search=nonexistent-lab12-1794074022151",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 755
+    },
+    {
+      "check": "H18",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 765
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?page=0",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 7
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?page=1.5",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 7
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?page=-1",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 6
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?page=abc",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 7
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?limit=51",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 7
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?limit=0",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 6
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?limit=1.5",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 7
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?sortBy=email",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 9
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?order=invalid",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 9
+    },
+    {
+      "check": "H19",
+      "method": "GET",
+      "path": "/api/books/search?genre=lab12-1794074022151&limit=50",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 751
+    },
+    {
+      "check": "H20",
+      "method": "GET",
+      "path": "/api/books/genres",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 132
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 778
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 777
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 34
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 400,
+      "actualStatus": 400,
+      "milliseconds": 10
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 134
+    },
+    {
+      "check": "H21",
+      "method": "PUT",
+      "path": "/api/books/cmw6pcspg001tgsgorbx1hmtz",
+      "expectedStatus": 409,
+      "actualStatus": 409,
+      "milliseconds": 401
+    },
+    {
+      "check": "H22",
+      "method": "GET",
+      "path": "/api/authors/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 177
+    },
+    {
+      "check": "H22",
+      "method": "GET",
+      "path": "/api/authors/missing/books",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 154
+    },
+    {
+      "check": "H22",
+      "method": "GET",
+      "path": "/api/authors/missing/stats",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 156
+    },
+    {
+      "check": "H22",
+      "method": "GET",
+      "path": "/api/books/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 160
+    },
+    {
+      "check": "H22",
+      "method": "PUT",
+      "path": "/api/authors/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 406
+    },
+    {
+      "check": "H22",
+      "method": "PUT",
+      "path": "/api/books/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 403
+    },
+    {
+      "check": "H22",
+      "method": "DELETE",
+      "path": "/api/authors/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 156
+    },
+    {
+      "check": "H22",
+      "method": "DELETE",
+      "path": "/api/books/missing",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 154
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 755
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 754
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 755
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 757
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 756
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 753
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 747
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 749
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 747
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 748
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 748
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 747
+    },
+    {
+      "check": "H23",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 748
+    },
+    {
+      "check": "H23",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 748
+    },
+    {
+      "check": "H23",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&page=2",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 746
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=title&order=asc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 747
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=title&order=desc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 748
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=publishedYear&order=asc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 747
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=publishedYear&order=desc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 746
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=createdAt&order=asc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 746
+    },
+    {
+      "check": "H24",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50&sortBy=createdAt&order=desc",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 748
+    },
+    {
+      "check": "H25",
+      "method": "GET",
+      "path": "/api/books/search?search=aMoR&authorName=aBrIeL+lab12-1794074022151&genre=lab12-1794074022151",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 747
+    },
+    {
+      "check": "H25",
+      "method": "GET",
+      "path": "/api/books/search?search=aMoR&authorName=aBrIeL+lab12-1794074022151&genre=LAB12-1794074022151",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 747
+    },
+    {
+      "check": "H25",
+      "method": "GET",
+      "path": "/api/books/search?search=aMoR&authorName=aBrIeL+lab12-1794074022151&genre=lab12-1794074022151-paging",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 748
+    },
+    {
+      "check": "H25",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&search=OBRA%200&limit=50",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 749
+    },
+    {
+      "check": "H26",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&page=3&limit=10",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 747
+    },
+    {
+      "check": "H26",
+      "method": "GET",
+      "path": "/api/books/search?authorId=cmw6pcpuo001pgsgo2zebrg43&limit=50",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 749
+    },
+    {
+      "check": "H27",
+      "method": "POST",
+      "path": "/api/authors",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 625
+    },
+    {
+      "check": "H27",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 748
+    },
+    {
+      "check": "H27",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 749
+    },
+    {
+      "check": "H27",
+      "method": "POST",
+      "path": "/api/books",
+      "expectedStatus": 201,
+      "actualStatus": 201,
+      "milliseconds": 749
+    },
+    {
+      "check": "H27",
+      "method": "GET",
+      "path": "/api/authors/cmw6pdg3k0027gsgob282njjb/stats",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 268
+    },
+    {
+      "check": "H27",
+      "method": "PUT",
+      "path": "/api/books/cmw6pdgod0028gsgonpimca0a",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 635
+    },
+    {
+      "check": "H27",
+      "method": "PUT",
+      "path": "/api/books/cmw6pdh960029gsgotgpdb11q",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 635
+    },
+    {
+      "check": "H27",
+      "method": "PUT",
+      "path": "/api/books/cmw6pdhtz002agsgoi0mgzufk",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 635
+    },
+    {
+      "check": "H27",
+      "method": "GET",
+      "path": "/api/authors/cmw6pdg3k0027gsgob282njjb/stats",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 265
+    },
+    {
+      "check": "H29",
+      "method": "DELETE",
+      "path": "/api/books/cmw6pcspg001tgsgorbx1hmtz",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 142
+    },
+    {
+      "check": "H29",
+      "method": "GET",
+      "path": "/api/books/cmw6pcspg001tgsgorbx1hmtz",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 130
+    },
+    {
+      "check": "H30",
+      "method": "DELETE",
+      "path": "/api/authors/cmw6pcntg001ngsgok69op8yq",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 140
+    },
+    {
+      "check": "H30",
+      "method": "GET",
+      "path": "/api/books/cmw6pcqry001qgsgo8uefpap1",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 130
+    },
+    {
+      "check": "H30",
+      "method": "GET",
+      "path": "/api/books/cmw6pcs4g001sgsgowa02wr5n",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 139
+    },
+    {
+      "check": "H30",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 254
+    },
+    {
+      "check": "cleanup",
+      "method": "DELETE",
+      "path": "/api/authors/cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 140
+    },
+    {
+      "check": "cleanup",
+      "method": "GET",
+      "path": "/api/authors/cmw6pcpuo001pgsgo2zebrg43",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 129
+    },
+    {
+      "check": "cleanup",
+      "method": "DELETE",
+      "path": "/api/authors/cmw6pdg3k0027gsgob282njjb",
+      "expectedStatus": 200,
+      "actualStatus": 200,
+      "milliseconds": 131
+    },
+    {
+      "check": "cleanup",
+      "method": "GET",
+      "path": "/api/authors/cmw6pdg3k0027gsgob282njjb",
+      "expectedStatus": 404,
+      "actualStatus": 404,
+      "milliseconds": 130
+    }
+  ],
+  "samples": {
+    "statistics": {
+      "authorId": "cmw6pcntg001ngsgok69op8yq",
+      "authorName": "Gabriel lab12-1794074022151",
+      "totalBooks": 3,
+      "firstBook": {
+        "title": "Amor Alfa lab12-1794074022151",
+        "year": 1967
+      },
+      "latestBook": {
+        "title": "Amor Zeta lab12-1794074022151",
+        "year": 2004
+      },
+      "averagePages": 200,
+      "genres": [
+        "lab12-1794074022151"
+      ],
+      "longestBook": {
+        "title": "Amor Zeta lab12-1794074022151",
+        "pages": 300
+      },
+      "shortestBook": {
+        "title": "Amor Alfa lab12-1794074022151",
+        "pages": 100
+      }
+    },
+    "pagination": {
+      "first": {
+        "page": 1,
+        "limit": 10,
+        "total": 13,
+        "totalPages": 2,
+        "hasNext": true,
+        "hasPrev": false
+      },
+      "second": {
+        "page": 2,
+        "limit": 10,
+        "total": 13,
+        "totalPages": 2,
+        "hasNext": false,
+        "hasPrev": true
+      },
+      "firstTitles": [
+        "lab12-1794074022151 Obra 00",
+        "lab12-1794074022151 Obra 01",
+        "lab12-1794074022151 Obra 02",
+        "lab12-1794074022151 Obra 03",
+        "lab12-1794074022151 Obra 04",
+        "lab12-1794074022151 Obra 05",
+        "lab12-1794074022151 Obra 06",
+        "lab12-1794074022151 Obra 07",
+        "lab12-1794074022151 Obra 08",
+        "lab12-1794074022151 Obra 09"
+      ],
+      "secondTitles": [
+        "lab12-1794074022151 Obra 10",
+        "lab12-1794074022151 Obra 11",
+        "lab12-1794074022151 Obra 12"
+      ]
+    },
+    "sorting": [
+      {
+        "field": "title",
+        "order": "asc",
+        "actualValues": [
+          "lab12-1794074022151 Obra 00",
+          "lab12-1794074022151 Obra 01",
+          "lab12-1794074022151 Obra 02",
+          "lab12-1794074022151 Obra 03",
+          "lab12-1794074022151 Obra 04",
+          "lab12-1794074022151 Obra 05",
+          "lab12-1794074022151 Obra 06",
+          "lab12-1794074022151 Obra 07",
+          "lab12-1794074022151 Obra 08",
+          "lab12-1794074022151 Obra 09",
+          "lab12-1794074022151 Obra 10",
+          "lab12-1794074022151 Obra 11",
+          "lab12-1794074022151 Obra 12"
+        ]
+      },
+      {
+        "field": "title",
+        "order": "desc",
+        "actualValues": [
+          "lab12-1794074022151 Obra 12",
+          "lab12-1794074022151 Obra 11",
+          "lab12-1794074022151 Obra 10",
+          "lab12-1794074022151 Obra 09",
+          "lab12-1794074022151 Obra 08",
+          "lab12-1794074022151 Obra 07",
+          "lab12-1794074022151 Obra 06",
+          "lab12-1794074022151 Obra 05",
+          "lab12-1794074022151 Obra 04",
+          "lab12-1794074022151 Obra 03",
+          "lab12-1794074022151 Obra 02",
+          "lab12-1794074022151 Obra 01",
+          "lab12-1794074022151 Obra 00"
+        ]
+      },
+      {
+        "field": "publishedYear",
+        "order": "asc",
+        "actualValues": [
+          1950,
+          1951,
+          1952,
+          1953,
+          1954,
+          1955,
+          1956,
+          1957,
+          1958,
+          1959,
+          1960,
+          1961,
+          1962
+        ]
+      },
+      {
+        "field": "publishedYear",
+        "order": "desc",
+        "actualValues": [
+          1962,
+          1961,
+          1960,
+          1959,
+          1958,
+          1957,
+          1956,
+          1955,
+          1954,
+          1953,
+          1952,
+          1951,
+          1950
+        ]
+      },
+      {
+        "field": "createdAt",
+        "order": "asc",
+        "actualValues": [
+          "2026-11-07T17:53:59.608Z",
+          "2026-11-07T17:54:00.362Z",
+          "2026-11-07T17:54:01.116Z",
+          "2026-11-07T17:54:01.872Z",
+          "2026-11-07T17:54:02.630Z",
+          "2026-11-07T17:54:03.385Z",
+          "2026-11-07T17:54:04.132Z",
+          "2026-11-07T17:54:04.880Z",
+          "2026-11-07T17:54:05.628Z",
+          "2026-11-07T17:54:06.376Z",
+          "2026-11-07T17:54:07.123Z",
+          "2026-11-07T17:54:07.871Z",
+          "2026-11-07T17:54:08.619Z"
+        ]
+      },
+      {
+        "field": "createdAt",
+        "order": "desc",
+        "actualValues": [
+          "2026-11-07T17:54:08.619Z",
+          "2026-11-07T17:54:07.871Z",
+          "2026-11-07T17:54:07.123Z",
+          "2026-11-07T17:54:06.376Z",
+          "2026-11-07T17:54:05.628Z",
+          "2026-11-07T17:54:04.880Z",
+          "2026-11-07T17:54:04.132Z",
+          "2026-11-07T17:54:03.385Z",
+          "2026-11-07T17:54:02.630Z",
+          "2026-11-07T17:54:01.872Z",
+          "2026-11-07T17:54:01.116Z",
+          "2026-11-07T17:54:00.362Z",
+          "2026-11-07T17:53:59.608Z"
+        ]
+      }
+    ],
+    "optionalStatistics": {
+      "allNull": {
+        "authorId": "cmw6pdg3k0027gsgob282njjb",
+        "authorName": "Opcionales lab12-1794074022151",
+        "totalBooks": 3,
+        "firstBook": null,
+        "latestBook": null,
+        "averagePages": null,
+        "genres": [
+          "lab12-1794074022151"
+        ],
+        "longestBook": null,
+        "shortestBook": null
+      },
+      "rounded": {
+        "authorId": "cmw6pdg3k0027gsgob282njjb",
+        "authorName": "Opcionales lab12-1794074022151",
+        "totalBooks": 3,
+        "firstBook": null,
+        "latestBook": null,
+        "averagePages": 1.67,
+        "genres": [
+          "lab12-1794074022151"
+        ],
+        "longestBook": {
+          "title": "Opcional 2 lab12-1794074022151",
+          "pages": 2
+        },
+        "shortestBook": {
+          "title": "Opcional 0 lab12-1794074022151",
+          "pages": 1
+        }
+      }
+    }
+  }
+}

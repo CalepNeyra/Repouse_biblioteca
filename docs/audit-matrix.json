@@ -1,0 +1,489 @@
+{
+  "date": "2026-11-07",
+  "totals": {
+    "criteria": 44,
+    "cumple": 42,
+    "noCumple": 0,
+    "noVerificado": 2,
+    "percentVerified": 95.45
+  },
+  "criteria": [
+    {
+      "id": "R1.01",
+      "feature": "search parcial e insensible a mayúsculas",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H16,H25",
+      "evidence": "AMOR y aMoR encuentran los dos títulos; OBRA 0 encuentra diez.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.02",
+      "feature": "genre exacto",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H25",
+      "evidence": "El género completo encuentra dos; cambiar mayúsculas o género produce cero.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.03",
+      "feature": "authorName parcial e insensible a mayúsculas",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H16,H25",
+      "evidence": "aBrIeL + identificador temporal coincide con Gabriel.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.04",
+      "feature": "page predeterminado 1",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H23",
+      "evidence": "Sin page, pagination.page=1 con 13 libros.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.05",
+      "feature": "limit predeterminado 10 y máximo 50",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H19,H23,H26",
+      "evidence": "Primera página con 10 filas; limit=50 aceptado; 51 rechazado con 400.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.06",
+      "feature": "sortBy: tres campos y predeterminado createdAt",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H23,H24",
+      "evidence": "Orden real por title, publishedYear y createdAt; omisión equivale a createdAt.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.07",
+      "feature": "order asc/desc y predeterminado desc",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H23,H24",
+      "evidence": "Seis secuencias contrastadas con IDs esperados; omisión descendente.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.08",
+      "feature": "JSON data y seis propiedades pagination",
+      "files": [
+        "src/app/api/books/search/route.ts"
+      ],
+      "test": "H17,H23,H26",
+      "evidence": "Aserciones de igualdad de page, limit, total, totalPages, hasNext y hasPrev.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.09",
+      "feature": "Combinación de filtros",
+      "files": [
+        "src/app/api/books/search/route.ts",
+        "src/lib/api.ts"
+      ],
+      "test": "H16,H25",
+      "evidence": "Título AND género AND nombre de autor; combinaciones incompatibles vacías.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R1.10",
+      "feature": "Paginación completa y casos vacíos",
+      "files": [
+        "src/app/api/books/search/route.ts"
+      ],
+      "test": "H17,H18,H23,H26",
+      "evidence": "13 IDs repartidos 10+3 sin repetidos; fuera de rango vacío y flags correctos.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.01",
+      "feature": "authorId",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15",
+      "evidence": "Igualdad con el autor temporal creado.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.02",
+      "feature": "authorName",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15",
+      "evidence": "Igualdad con el nombre guardado.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.03",
+      "feature": "totalBooks",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,DB1",
+      "evidence": "Tres registros en HTTP; ocho registros contrastados directamente en Neon.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.04",
+      "feature": "firstBook: título y año",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,DB1",
+      "evidence": "Título esperado y año 1967; fixture visual 2000.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.05",
+      "feature": "latestBook: título y año",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,DB1",
+      "evidence": "Título esperado y año 2004; fixture visual 2020.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.06",
+      "feature": "averagePages",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,H27,DB1",
+      "evidence": "200, 1.67 y 156.5 contrastados con los datos.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.07",
+      "feature": "genres únicos",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,H27",
+      "evidence": "Dos libros con el mismo género generan una única entrada; null excluido.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.08",
+      "feature": "longestBook: título y páginas",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,DB1",
+      "evidence": "Objeto exacto {title,pages}, 300 páginas.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.09",
+      "feature": "shortestBook: título y páginas",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,DB1",
+      "evidence": "Objeto exacto {title,pages}, 100 páginas.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.10",
+      "feature": "Autor sin libros",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H03",
+      "evidence": "totalBooks=0; genres=[]; estadísticas opcionales=null.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.11",
+      "feature": "Valores opcionales vacíos",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "H15,H27",
+      "evidence": "Años y páginas null excluidos; tres libros sin páginas/años devuelven null.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R2.12",
+      "feature": "Cálculos con datos reales de Neon",
+      "files": [
+        "src/app/api/authors/[id]/stats/route.ts",
+        "src/lib/prisma.ts"
+      ],
+      "test": "DB1",
+      "evidence": "Consulta directa Prisma lee ocho libros y coincide con GET /stats y pantalla.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.D1",
+      "feature": "Dashboard: crear autores",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H01,U01",
+      "evidence": "Formulario crea autora y la muestra; HTTP verifica persistencia.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.D2",
+      "feature": "Dashboard: listar autores",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H02,U02",
+      "evidence": "Listado real con _count; snapshot con dos autores.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.D3",
+      "feature": "Dashboard: editar autores",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H07,U03",
+      "evidence": "Biografía modificada desde el formulario y visible.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.D4",
+      "feature": "Dashboard: eliminar autores",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx",
+        "src/app/api/authors/[id]/route.ts"
+      ],
+      "test": "H30,U15",
+      "evidence": "DELETE y cascada aprobados por HTTP. El diálogo apareció; no se controló su aceptación final. No se acredita el flujo completo del botón.",
+      "status": "NO VERIFICADO"
+    },
+    {
+      "id": "R3.D5",
+      "feature": "Dashboard: ver libros de cada autor",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx",
+        "src/app/authors/[id]/page.tsx"
+      ],
+      "test": "H14,U12",
+      "evidence": "Enlace lleva al detalle; listado completo comprobado.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.D6",
+      "feature": "Dashboard: estadísticas generales",
+      "files": [
+        "src/app/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "U02",
+      "evidence": "Dos autores, seis libros y dos géneros coinciden con los fixtures al observar la pantalla.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B1",
+      "feature": "Libros: crear con selector de autor",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H09,U09",
+      "evidence": "Se selecciona autora y aparece nuevo libro de 201 páginas.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B2",
+      "feature": "Libros: búsqueda en tiempo real",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H25,U06",
+      "evidence": "Sin enviar formulario, SERIE AUDITORÍA 00 reduce a un resultado.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B3",
+      "feature": "Libros: dropdown de género",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H20,U07",
+      "evidence": "Seleccionar Ensayo Auditoría muestra tres libros.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B4",
+      "feature": "Libros: dropdown de autor",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H13,U07",
+      "evidence": "Autor alternativo sin libros reduce a cero; volver a autora recupera tres.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B5",
+      "feature": "Libros: ordenamiento por título, año y creación",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H24,U08",
+      "evidence": "Seis órdenes comprobados por HTTP y por dropdowns.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B6",
+      "feature": "Libros: paginación funcional",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H23,U05",
+      "evidence": "Página 1 con cinco filas y página 2 con una; navegación anterior y siguiente.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B7",
+      "feature": "Libros: total de resultados",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H23,U05,U07",
+      "evidence": "Total 6 al paginar; 3 al filtrar; 0 con filtro incompatible.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B8",
+      "feature": "Libros: estados de carga",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "U04,inspección L:99 y L:127",
+      "evidence": "Cargando biblioteca observado; searching controla aria-busy y Buscando libros.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B9",
+      "feature": "Libros: editar",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H21,U10",
+      "evidence": "Páginas 201→202 desde formulario y confirmación visible.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.B10",
+      "feature": "Libros: eliminar",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx",
+        "src/app/api/books/[id]/route.ts"
+      ],
+      "test": "H29,U16",
+      "evidence": "DELETE y posterior GET 404 aprobados por HTTP. No se completó la confirmación del botón en navegador.",
+      "status": "NO VERIFICADO"
+    },
+    {
+      "id": "R3.B11",
+      "feature": "Libros: responsive",
+      "files": [
+        "src/app/books/page.tsx",
+        "src/components/library.tsx",
+        "src/app/globals.css"
+      ],
+      "test": "U11",
+      "evidence": "Capturas 1280/390; ancho documento=375, viewport útil=375; tabla con scroll local.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.A1",
+      "feature": "Detalle: información completa del autor",
+      "files": [
+        "src/app/authors/[id]/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "U12",
+      "evidence": "Nombre, correo, nacionalidad, nacimiento y biografía visibles.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.A2",
+      "feature": "Detalle: consume endpoint /stats",
+      "files": [
+        "src/app/authors/[id]/page.tsx",
+        "src/components/library.tsx",
+        "src/app/api/authors/[id]/stats/route.ts"
+      ],
+      "test": "DB1,U12,U14,inspección L:82",
+      "evidence": "fetch /api/authors/[id]/stats; ocho libros y promedio 156.5 coinciden con Neon.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.A3",
+      "feature": "Detalle: lista de todos sus libros",
+      "files": [
+        "src/app/authors/[id]/page.tsx",
+        "src/components/library.tsx",
+        "src/app/api/authors/[id]/books/route.ts"
+      ],
+      "test": "H14,U14",
+      "evidence": "Ocho filas y total ocho; consulta sin paginación en el detalle.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.A4",
+      "feature": "Detalle: formulario de edición",
+      "files": [
+        "src/app/authors/[id]/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H07,U13",
+      "evidence": "Biografía editada desde detalle y mostrada después de guardar.",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "R3.A5",
+      "feature": "Detalle: agregar libro a ese autor",
+      "files": [
+        "src/app/authors/[id]/page.tsx",
+        "src/components/library.tsx"
+      ],
+      "test": "H09,U14",
+      "evidence": "Autor preseleccionado y bloqueado; nuevo libro de 300 páginas eleva total a ocho.",
+      "status": "CUMPLE"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-07T17:55:32.881Z",
+  "node": "v24.22.1",
+  "results": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "status": "CUMPLE",
+      "milliseconds": 1173,
+      "output": "\n> next-api-routes@0.1.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 0,
+      "status": "CUMPLE",
+      "milliseconds": 2349,
+      "output": "\n> next-api-routes@0.1.0 lint\n> eslint\n\n"
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "status": "CUMPLE",
+      "milliseconds": 4824,
+      "output": "\n> next-api-routes@0.1.0 build\n> prisma generate && next build\n\n\n✔ Generated Prisma Client (v7.10.1) to .\\node_modules\\@prisma\\client in 73ms\n\nStart by importing your Prisma Client (See: https://pris.ly/d/importing-client)\n\n\n▲ Next.js 16.4.5 (Turbopack)\n- Environments: .env\n✓ Running next.config.ts took 23ms\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 427ms\n  Running TypeScript ...\n  Finished TypeScript in 914ms ...\n  Collecting page data using 15 workers ...\n  Generating static pages using 15 workers (0/9) ...\n  Generating static pages using 15 workers (2/9) \r\n  Generating static pages using 15 workers (4/9) \r\n  Generating static pages using 15 workers (6/9) \r\n✓ Generating static pages using 15 workers (9/9) in 459ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ƒ /api/authors\n├ ƒ /api/authors/[id]\n├ ƒ /api/authors/[id]/books\n├ ƒ /api/authors/[id]/stats\n├ ƒ /api/books\n├ ƒ /api/books/[id]\n├ ƒ /api/books/genres\n├ ƒ /api/books/search\n├ ƒ /authors/[id]\n└ ○ /books\n\n\n○  (Static)   prerendered as static content\nƒ  (Dynamic)  server-rendered on demand\n\nLoaded Prisma config from prisma.config.ts.\n\nPrisma schema loaded from prisma\\schema.prisma.\n"
+    }
+  ]
+}

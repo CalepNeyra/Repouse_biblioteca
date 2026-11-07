@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-07T17:53:00.883Z",
+  "results": [
+    {
+      "id": "U01",
+      "test": "Crear autor mediante formulario y mostrarlo en el dashboard",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U02",
+      "test": "Dashboard con 2 autores, 6 libros y 2 géneros reales",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U03",
+      "test": "Editar autor desde dashboard y observar biografía actualizada",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U04",
+      "test": "Estado Cargando biblioteca visible al abrir catálogo",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U05",
+      "test": "Paginación: 5 filas en página 1, una en página 2 y total 6",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U06",
+      "test": "Búsqueda sin enviar formulario: SERIE AUDITORÍA 00 encuentra un resultado",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U07",
+      "test": "Dropdown género muestra 3 ensayos; combinar con autor sin libros produce cero",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U08",
+      "test": "Tres campos y ambos sentidos de ordenamiento desde dropdowns",
+      "status": "CUMPLE",
+      "evidence": [
+        {
+          "field": "title",
+          "direction": "asc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar"
+          ]
+        },
+        {
+          "field": "title",
+          "direction": "desc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar"
+          ]
+        },
+        {
+          "field": "publishedYear",
+          "direction": "asc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar"
+          ]
+        },
+        {
+          "field": "publishedYear",
+          "direction": "desc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar"
+          ]
+        },
+        {
+          "field": "createdAt",
+          "direction": "asc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar"
+          ]
+        },
+        {
+          "field": "createdAt",
+          "direction": "desc",
+          "rows": [
+            "Libro / ISBNAutorGéneroAñoPáginasAcciones",
+            "Serie Auditoría 05Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2005150EditarEliminar",
+            "Serie Auditoría 03Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2003130EditarEliminar",
+            "Serie Auditoría 01Sin ISBNAutora Auditoría TAREAEnsayo Auditoría2001110EditarEliminar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "U09",
+      "test": "Crear libro desde catálogo seleccionando autora y observar fila con 201 páginas",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U10",
+      "test": "Editar libro: páginas pasan de 201 a 202 y se muestra confirmación",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U11",
+      "test": "Responsive 1280 y 390: documento sin desbordamiento; tabla con scroll local",
+      "status": "CUMPLE",
+      "metrics": {
+        "documentWidth": 375,
+        "clientWidth": 375,
+        "tableContentWidth": 927,
+        "tableWrapperWidth": 341
+      }
+    },
+    {
+      "id": "U12",
+      "test": "Detalle con nombre, correo, nacionalidad, nacimiento, biografía, 7 libros y estadísticas 136/2000/2010/202/100",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U13",
+      "test": "Edición desde detalle: biografía actualizada y confirmación visible",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U14",
+      "test": "Crear desde detalle con autor bloqueado: ocho libros, promedio 156.5 y última publicación 2020",
+      "status": "CUMPLE"
+    },
+    {
+      "id": "U15",
+      "test": "Eliminar autor desde botón: diálogo observado y desaparición posterior; aceptación final no controlada",
+      "status": "NO VERIFICADO",
+      "backend": "H30 sí verifica DELETE y cascada por HTTP"
+    },
+    {
+      "id": "U16",
+      "test": "Eliminar libro desde botón con confirmación completa",
+      "status": "NO VERIFICADO",
+      "backend": "H29 sí verifica DELETE por HTTP"
+    }
+  ],
+  "scope": "Pruebas UI nuevas; las aceptaciones finales de los diálogos de eliminación no se cuentan como verificadas."
+}
